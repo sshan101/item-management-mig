@@ -1,0 +1,5 @@
+.settings
+/target/
+**/.DS_STORE
+
+cobol2java-error.log

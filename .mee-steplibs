@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<steplibs>
+    <default>
+        <library name="resources/source/cobol/copies" />
+    </default>
+</steplibs>

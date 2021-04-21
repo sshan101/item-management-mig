@@ -1,0 +1,65 @@
+<project default="antrunner" basedir="../..">
+
+	<!-- Antscript zum starten der Konvertierung
+	     
+	     Dieses Script dient zum Aufruf der Natural-Java Konvertierung
+	     aus dem Betriebssystem. Es sollte nicht innerhalb von Eclipse
+	     gestartet werden, da es selber wiederum Eclipse als Antrunner
+	     startet
+	-->
+	
+	<!-- settings for startup of headless eclipse -->
+    <property name="JVM" value="/usr/lib/jvm/java-8-openjdk-amd64/bin/java"/>
+    <property name="LAUNCHERJAR" value="/var/jenkins_home/deloitte/apps/eclipse/plugins/org.eclipse.equinox.launcher_1.5.300.v20190213-1655.jar"/>
+
+	<!-- home of mee-ant-migration -->
+    <property name="MAM_HOME" value="/var/jenkins_home/workspace/toolbox/transformation-jumpstart"/>
+	<property name="MAM_PROJECT" value="+mee-ant-migration"/>
+    <property name="MAM_BUILDFILE" value="${MAM_HOME}/${MAM_PROJECT}/devops.xml"/>
+	
+	<!-- location of the eclipse workspace -->
+	<property name="MAM_MIGRATION_WORKSPACE" value="/var/jenkins_home/workspace/toolbox/transformation-jumpstart/customer-zero-mig-ws"/>
+
+	<!-- where is the original source code coming from -->
+	<property name="MAM_LEGACY_SOURCE" value="../item-management-mig/resources/source/cobol"/>
+
+	<target name="antrunner">
+	
+		<echo>Starte Antrunner-Eclipse ...</echo>
+		<delete dir="${MAM_MIGRATION_WORKSPACE}" />
+
+		<java jvm="${JVM}" classname="org.eclipse.equinox.launcher.Main" failonerror="true" fork="true">
+            <classpath>
+                <pathelement location="${LAUNCHERJAR}"/>
+            </classpath>
+			<arg value="-application"/>
+			<arg value="org.eclipse.ant.core.antRunner"/>
+			<arg value="-logger"/>
+			<arg value="org.apache.tools.ant.listener.BigProjectLogger"/>
+			<arg value="-data"/>
+			<arg value="${MAM_MIGRATION_WORKSPACE}"/>
+			<arg value="-buildfile"/>
+			<arg value="${MAM_BUILDFILE}"/>
+			<arg value="prepare" /> 
+			<arg value="migrate" />  
+<!--			<jvmarg value="-agentlib:jdwp=transport=dt_socket,server=y,address=8000,suspend=y" />
+-->		    <jvmarg value="-Dosgi.requiredJavaVersion=1.8"/>
+			<jvmarg value="-Djava.library.path=/usr/lib64"/>
+			<jvmarg value="-Xms2048m"/>
+			<jvmarg value="-Xmx8192m"/>
+			<jvmarg value="-Xdebug"/>
+			<jvmarg value="-Xnoagent"/>
+			<jvmarg value="-Djava.compiler=NONE"/>
+			<jvmarg value="-XX:+PrintCommandLineFlags"/>
+			<jvmarg value="-Dorg.eclipse.equinox.p2.reconciler.dropins.directory=${MAM_HOME}/${MAM_PROJECT}/plugin"/>
+			<!-- <jvmarg value="-Dorg.eclipse.equinox.p2.reconciler.dropins.directory=${MAM_HOME}/tool-innowake-eclipse-anttasks-plugin/plugin"/>  -->
+			<jvmarg value="-Dorg.eclipse.update.reconcile=true"/>
+			<env key="MAM_MIGRATION_WORKSPACE" value="${MAM_MIGRATION_WORKSPACE}"/>
+			<env key="MAM_LEGACY_SOURCE" value="${MAM_LEGACY_SOURCE}"/>
+		</java>
+	
+	</target>
+	     
+
+
+</project>

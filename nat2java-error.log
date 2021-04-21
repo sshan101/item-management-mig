@@ -1,0 +1,185 @@
+ERROR category = general
+A general error occurred. (1)
+A critical error occurred processing build
+
+org.eclipse.core.internal.resources.ResourceException: Errors occurred during the build.
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:576)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2295)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:548)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:116)
+	at innowake.mee.source.base.script.StaticWorkspaceJob.buildProject(StaticWorkspaceJob.java:74)
+	at innowake.mee.source.cobol2csharp.expert.CSharpExpertMigrationProvider.build(CSharpExpertMigrationProvider.java:631)
+	at innowake.mee.source.cobol2java.Cobol2Java.build(Cobol2Java.java:599)
+	at innowake.mee.source.cobol2csharp.Cobol2CSharp.generateBmsCopybooks(Cobol2CSharp.java:458)
+	at innowake.mee.source.cobol2csharp.Cobol2CSharp.a(Cobol2CSharp.java:348)
+	at innowake.mee.source.cobol2csharp.Cobol2CSharp.execute(Cobol2CSharp.java:187)
+	at innowake.mee.source.cobol2csharp.script.Cobol2CSharpScript.execute(Cobol2CSharpScript.java:35)
+	at innowake.mee.source.cobol2csharp.script.Cobol2CSharpScript.execute(Cobol2CSharpScript.java:25)
+	at innowake.mee.source.base.script.StaticWorkspaceJob.runInWorkspace(StaticWorkspaceJob.java:56)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Errors running builder 'Java Builder' on project 'item-management-mig'.
+java.lang.IllegalArgumentException: org.eclipse.jdt.internal.core.builder.SourceFile
+	at innowake.mee.ide.base.core.internal.AstTransformer.transform(AstTransformer.java:108)
+	at innowake.base.jdt.hooks.JdtHooks.a(JdtHooks.java:369)
+	at innowake.base.jdt.hooks.JdtHooks.postParse(JdtHooks.java:101)
+	at org.eclipse.jdt.internal.compiler.parser.Parser.endParse(Parser.java:10553)
+	at org.eclipse.jdt.internal.compiler.parser.Parser.parse(Parser.java:11734)
+	at org.eclipse.jdt.internal.compiler.parser.Parser.parse(Parser.java:11958)
+	at org.eclipse.jdt.internal.compiler.parser.Parser.parse(Parser.java:11915)
+	at org.eclipse.jdt.internal.compiler.parser.Parser.dietParse(Parser.java:10325)
+	at org.eclipse.jdt.internal.compiler.Compiler.internalBeginToCompile(Compiler.java:840)
+	at org.eclipse.jdt.internal.compiler.Compiler.beginToCompile(Compiler.java:394)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:444)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:426)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:386)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.compile(BatchImageBuilder.java:214)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:318)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:79)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:262)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:185)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:833)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:278)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:468)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:574)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2295)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:548)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:116)
+	at innowake.mee.source.base.script.StaticWorkspaceJob.buildProject(StaticWorkspaceJob.java:74)
+	at innowake.mee.source.cobol2csharp.expert.CSharpExpertMigrationProvider.build(CSharpExpertMigrationProvider.java:631)
+	at innowake.mee.source.cobol2java.Cobol2Java.build(Cobol2Java.java:599)
+	at innowake.mee.source.cobol2csharp.Cobol2CSharp.generateBmsCopybooks(Cobol2CSharp.java:458)
+	at innowake.mee.source.cobol2csharp.Cobol2CSharp.a(Cobol2CSharp.java:348)
+	at innowake.mee.source.cobol2csharp.Cobol2CSharp.execute(Cobol2CSharp.java:187)
+	at innowake.mee.source.cobol2csharp.script.Cobol2CSharpScript.execute(Cobol2CSharpScript.java:35)
+	at innowake.mee.source.cobol2csharp.script.Cobol2CSharpScript.execute(Cobol2CSharpScript.java:25)
+	at innowake.mee.source.base.script.StaticWorkspaceJob.runInWorkspace(StaticWorkspaceJob.java:56)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.IllegalArgumentException: No enum constant innowake.mee.ide.base.core.internal.AstTransformationVersion.V3
+	at java.lang.Enum.valueOf(Enum.java:238)
+	at innowake.mee.ide.base.core.internal.AstTransformationVersion.valueOf(AstTransformationVersion.java:9)
+	at innowake.mee.ide.base.core.internal.AstTransformationUtils.getTransformationVersion(AstTransformationUtils.java:459)
+	at innowake.mee.ide.cobol.core.internal.ast.DataDefinitionTransformer.visit(DataDefinitionTransformer.java:49)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1407)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:812)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:773)
+	at innowake.mee.ide.cobol.core.internal.ast.DataDefinitionTransformer.traverse(DataDefinitionTransformer.java:30)
+	at innowake.mee.ide.cobol.core.internal.ast.CobolAstTransformer.transform(CobolAstTransformer.java:45)
+	at innowake.mee.ide.base.core.internal.AstTransformer.transform(AstTransformer.java:91)
+	... 41 more
+ERROR category = general
+A general error occurred. (2)
+A critical error occurred processing build
+
+org.eclipse.core.internal.resources.ResourceException: Errors occurred during the build.
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:576)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2295)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:548)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:116)
+	at innowake.mee.source.base.script.StaticWorkspaceJob.buildProject(StaticWorkspaceJob.java:74)
+	at innowake.mee.source.cobol2csharp.expert.CSharpExpertMigrationProvider.build(CSharpExpertMigrationProvider.java:631)
+	at innowake.mee.source.cobol2java.Cobol2Java.build(Cobol2Java.java:599)
+	at innowake.mee.source.cobol2csharp.Cobol2CSharp.a(Cobol2CSharp.java:406)
+	at innowake.mee.source.cobol2csharp.Cobol2CSharp.execute(Cobol2CSharp.java:187)
+	at innowake.mee.source.cobol2csharp.script.Cobol2CSharpScript.execute(Cobol2CSharpScript.java:35)
+	at innowake.mee.source.cobol2csharp.script.Cobol2CSharpScript.execute(Cobol2CSharpScript.java:25)
+	at innowake.mee.source.base.script.StaticWorkspaceJob.runInWorkspace(StaticWorkspaceJob.java:56)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Errors running builder 'Java Builder' on project 'item-management-mig'.
+java.lang.IllegalArgumentException: org.eclipse.jdt.internal.core.builder.SourceFile
+	at innowake.mee.ide.base.core.internal.AstTransformer.transform(AstTransformer.java:108)
+	at innowake.base.jdt.hooks.JdtHooks.a(JdtHooks.java:369)
+	at innowake.base.jdt.hooks.JdtHooks.postParse(JdtHooks.java:101)
+	at org.eclipse.jdt.internal.compiler.parser.Parser.endParse(Parser.java:10553)
+	at org.eclipse.jdt.internal.compiler.parser.Parser.parse(Parser.java:11734)
+	at org.eclipse.jdt.internal.compiler.parser.Parser.parse(Parser.java:11958)
+	at org.eclipse.jdt.internal.compiler.parser.Parser.parse(Parser.java:11915)
+	at org.eclipse.jdt.internal.compiler.parser.Parser.dietParse(Parser.java:10325)
+	at org.eclipse.jdt.internal.compiler.Compiler.internalBeginToCompile(Compiler.java:840)
+	at org.eclipse.jdt.internal.compiler.Compiler.beginToCompile(Compiler.java:394)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:444)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:426)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:386)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.compile(BatchImageBuilder.java:214)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:318)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:79)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:262)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:185)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:833)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:278)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:468)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:574)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2295)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:548)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:116)
+	at innowake.mee.source.base.script.StaticWorkspaceJob.buildProject(StaticWorkspaceJob.java:74)
+	at innowake.mee.source.cobol2csharp.expert.CSharpExpertMigrationProvider.build(CSharpExpertMigrationProvider.java:631)
+	at innowake.mee.source.cobol2java.Cobol2Java.build(Cobol2Java.java:599)
+	at innowake.mee.source.cobol2csharp.Cobol2CSharp.a(Cobol2CSharp.java:406)
+	at innowake.mee.source.cobol2csharp.Cobol2CSharp.execute(Cobol2CSharp.java:187)
+	at innowake.mee.source.cobol2csharp.script.Cobol2CSharpScript.execute(Cobol2CSharpScript.java:35)
+	at innowake.mee.source.cobol2csharp.script.Cobol2CSharpScript.execute(Cobol2CSharpScript.java:25)
+	at innowake.mee.source.base.script.StaticWorkspaceJob.runInWorkspace(StaticWorkspaceJob.java:56)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.IllegalArgumentException: No enum constant innowake.mee.ide.base.core.internal.AstTransformationVersion.V3
+	at java.lang.Enum.valueOf(Enum.java:238)
+	at innowake.mee.ide.base.core.internal.AstTransformationVersion.valueOf(AstTransformationVersion.java:9)
+	at innowake.mee.ide.base.core.internal.AstTransformationUtils.getTransformationVersion(AstTransformationUtils.java:459)
+	at innowake.mee.ide.cobol.core.internal.ast.DataDefinitionTransformer.visit(DataDefinitionTransformer.java:49)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1407)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:812)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:773)
+	at innowake.mee.ide.cobol.core.internal.ast.DataDefinitionTransformer.traverse(DataDefinitionTransformer.java:30)
+	at innowake.mee.ide.cobol.core.internal.ast.CobolAstTransformer.transform(CobolAstTransformer.java:45)
+	at innowake.mee.ide.base.core.internal.AstTransformer.transform(AstTransformer.java:91)
+	... 40 more
+ERROR category = general
+A general error occurred. (3)
+source: CZORDLST
+Unhandled cobol token: [DB2CONN] offset: 71168 length:7 line:1371 column:21 firstTokenInLine:false lastTokenInLine:false
+
+ERROR category = general
+A general error occurred. (4)
+source: CZORDLST
+Unhandled cobol token: [CONNECTED] offset: 71176 length:9 line:1371 column:29 firstTokenInLine:false lastTokenInLine:true
+
+ERROR category = general
+A general error occurred. (5)
+source: CZORDLST
+Unhandled cobol token: [RESP] offset: 71246 length:4 line:1372 column:17 firstTokenInLine:true lastTokenInLine:false
+
+ERROR category = general
+A general error occurred. (6)
+source: CZORDLST
+Unhandled cobol token: [(] offset: 71251 length:1 line:1372 column:22 firstTokenInLine:false lastTokenInLine:false
+
+ERROR category = general
+A general error occurred. (7)
+source: CZORDLST
+Unhandled cobol token: [WS-RESP] offset: 71252 length:7 line:1372 column:23 firstTokenInLine:false lastTokenInLine:true
+
+ERROR category = general
+A general error occurred. (8)
+source: CZORDLST
+Unhandled cobol token: [)] offset: 71259 length:1 line:1372 column:30 firstTokenInLine:false lastTokenInLine:true
+
+ERROR category = general
+A general error occurred. (9)
+source: CZORDLST
+Unhandled cobol token: [END-EXEC] offset: 71322 length:8 line:1373 column:11 firstTokenInLine:true lastTokenInLine:true
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="innowake.product.base.classpathContainer"/>
+	<classpathentry kind="var" path="M2_REPO/innowake/products/mee/source/migration/mee-source-migration-deps-general/99.9.9.9_TRUNK_MEE-SNAPSHOT/mee-source-migration-deps-general-99.9.9.9_TRUNK_MEE-SNAPSHOT.jar"/>
+	<classpathentry kind="var" path="M2_REPO/innowake/products/mee/source/migration/mee-source-migration-dist/99.9.9.9_TRUNK_MEE-SNAPSHOT/mee-source-migration-dist-99.9.9.9_TRUNK_MEE-SNAPSHOT.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="resources/source/java"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
